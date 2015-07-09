@@ -1,0 +1,27 @@
+<h2>Categorias</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= link_to 'Editar', edit_category_path(category) %></td>
+        <td><%= link_to 'Remover', category, method: :delete, data: { confirm: 'Voc&ecirc; tem certeza?'.html_safe } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to(new_product_path, class: "btn btn-default") do %>
+    <span class="glyphicon glyphicon-plus"></span> Nova Categoria
+
+<% end %>

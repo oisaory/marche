@@ -1,0 +1,27 @@
+<h2>Lista de compras</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Produto</th>
+      <th>Categoria</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lists.each do |item| %>
+      <tr>
+        <td><%= item.product.name %></td>
+        <td><%= item.product.category.name %></td>
+        <td><%= link_to 'Remover', item, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to(new_list_path, class: "btn btn-default") do %>
+<span class="glyphicon glyphicon-plus"></span> Novo Produto
+<% end %>

@@ -1,0 +1,28 @@
+<h2>Catalogo de Produtos</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= sortable "name", "Nome" %></th>
+      <th>Categoria</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.category.name %></td>
+        <td><%= link_to 'Editar', edit_product_path(product) %></td>
+        <td><%= link_to 'Remover', product, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to(new_product_path, class: "btn btn-default") do %>
+    <span class="glyphicon glyphicon-plus"></span> Novo Produto
+<% end %>
