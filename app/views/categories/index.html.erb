@@ -1,5 +1,5 @@
 <h2>Categorias</h2>
-
+<p id="notice"><%= notice %></p>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -21,7 +21,6 @@
 
 <br>
 
-<%= link_to(new_product_path, class: "btn btn-default") do %>
+<%= link_to new_category_path, class: "btn btn-default" do %>
     <span class="glyphicon glyphicon-plus"></span> Nova Categoria
-
 <% end %>
